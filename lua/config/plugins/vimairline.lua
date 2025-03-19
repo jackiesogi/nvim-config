@@ -1,0 +1,32 @@
+-- Set vim-airline theme
+vim.g.airline_theme = 'badwolf'
+
+-- Test every theme in vim-airline-themes (please separate the screen to view the changes)
+-- Define the path to the vim-airline themes directory
+-- local themes_path = vim.fn.stdpath('data') .. '/site/pack/packer/start/vim-airline-themes/autoload/airline/themes/'
+--
+-- -- Get a list of all theme files
+-- local themes = vim.fn.globpath(themes_path, '*.vim', false, true)
+--
+-- -- Loop through each theme
+-- for _, theme_file in ipairs(themes) do
+--     -- Extract the theme name from the file name
+--     local theme_name = vim.fn.fnamemodify(theme_file, ':t:r')
+--
+--     -- Set the airline theme dynamically
+--     vim.g.airline_theme = theme_name
+--
+--     -- Load the airline theme immediately
+--     vim.cmd('AirlineRefresh')
+--
+--     -- Redraw the screen to reflect the change
+--     vim.cmd('redraw')
+--
+--     -- Print the current theme for reference
+--     print("Switched to theme: " .. theme_name)
+--
+--     -- Wait for user input to continue to the next theme
+--     print("Press any key to continue to the next theme...")
+--     vim.fn.getchar()
+-- end
+--
