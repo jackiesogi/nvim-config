@@ -13,6 +13,6 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvi
 
 
 mkdir -p ~/.config/nvim
-cp -fvir * ~/.config/nvim/
+yes | cp -fvir * ~/.config/nvim/
 
 nvim -c 'PackerSync'
