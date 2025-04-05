@@ -30,6 +30,16 @@ return require('packer').startup(function(use)
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
 
+    use({
+        "kylechui/nvim-surround",
+        tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+        config = function()
+            require("nvim-surround").setup({
+                -- Configuration here, or leave empty to use defaults
+            })
+        end
+    })
+
     use {
         "windwp/nvim-autopairs",
         event = "InsertEnter",
@@ -161,5 +171,20 @@ return require('packer').startup(function(use)
 
         -- symbols-outline
         use 'simrat39/symbols-outline.nvim'
+
+
+        use({
+            'nvimdev/lspsaga.nvim',
+            after = 'nvim-lspconfig',
+            config = function()
+                require('lspsaga').setup({
+                    finder = {
+                        max_height = 0.7,
+                        layout = 'normal',
+                    }
+                })
+            end,
+        })
+
     end)
 end)

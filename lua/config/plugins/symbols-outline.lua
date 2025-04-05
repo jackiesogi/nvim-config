@@ -14,7 +14,7 @@ require("symbols-outline").setup({
     show_relative_numbers = false,
     show_symbol_details = true,
     preview_bg_highlight = 'Pmenu',
-    autofold_depth = nil,
+    autofold_depth = 1,
     auto_unfold_hover = true,
     fold_markers = { '', '' },
     wrap = false,
