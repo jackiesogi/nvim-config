@@ -4,3 +4,21 @@ function ColorMyPencils()
 end
 
 ColorMyPencils()
+
+vim.opt.incsearch = true
+vim.opt.hlsearch = true
+
+vim.api.nvim_create_autocmd("CmdlineEnter", {
+  pattern = "/,?",
+  callback = function()
+    vim.opt.hlsearch = true
+  end,
+})
+
+-- Entering to insert mode will turn off highlighting
+vim.api.nvim_create_autocmd("InsertEnter", {
+  callback = function()
+    vim.opt.hlsearch = false
+  end,
+})
+

@@ -40,14 +40,6 @@ return require('packer').startup(function(use)
         end
     })
 
-    use {
-        "windwp/nvim-autopairs",
-        event = "InsertEnter",
-        config = function()
-            require("nvim-autopairs").setup {}
-        end
-    }
-
     use('vim-airline/vim-airline')
     use('vim-airline/vim-airline-themes')
 
@@ -164,7 +156,7 @@ return require('packer').startup(function(use)
         use 'NeogitOrg/neogit'
 
         -- Autopairs
-        use { 'windwp/nvim-autopairs', event = 'InsertEnter' }
+        use {"windwp/nvim-autopairs"}
 
         -- Comment
         use { 'numToStr/Comment.nvim' }
@@ -186,5 +178,7 @@ return require('packer').startup(function(use)
             end,
         })
 
+        -- flash.nvim
+        use { 'folke/flash.nvim' }
     end)
 end)

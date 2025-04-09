@@ -86,7 +86,7 @@ vim.keymap.set('n', '<C-X>', '<C-X>', opts)
 ---------------------------       tabs & panels      ---------------------------
 --------------------------------------------------------------------------------
 -- Open a new tab with a terminal
-vim.keymap.set('n', '<leader>t', ':tabnew | term<CR>', opts)
+-- vim.keymap.set('n', '<leader>t', ':tabnew | term<CR>', opts)
 
 -- Switch to next tab
 vim.keymap.set('n', '<Tab>', ':tabnext<CR>', opts)
