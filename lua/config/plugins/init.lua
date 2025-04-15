@@ -1,6 +1,7 @@
 require('config.plugins.packer')
 require('config.plugins.dap')
 require('config.plugins.autopairs')
+-- require('config.plugins.rosepine')
 -- require('config.plugins.flash')
 require('config.plugins.fugitive')
 require('config.plugins.harpoon')

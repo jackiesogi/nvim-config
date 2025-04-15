@@ -84,6 +84,7 @@ return require('packer').startup(function(use)
     }
     use {
         'mfussenegger/nvim-dap',
+        tag = '0.9.0',
         requires = {
             'rcarriga/nvim-dap-ui',
             'jay-babu/mason-nvim-dap.nvim',
@@ -156,7 +157,7 @@ return require('packer').startup(function(use)
         use 'NeogitOrg/neogit'
 
         -- Autopairs
-        use {"windwp/nvim-autopairs"}
+        use { "windwp/nvim-autopairs" }
 
         -- Comment
         use { 'numToStr/Comment.nvim' }
@@ -177,6 +178,14 @@ return require('packer').startup(function(use)
                 })
             end,
         })
+
+        -- use {
+        --     'rose-pine/neovim',
+        --     as = 'rose-pine',
+        --     -- config = function()
+        --     --     vim.cmd('colorscheme rose-pine')
+        --     -- end
+        -- }
 
         -- flash.nvim
         use { 'folke/flash.nvim' }
