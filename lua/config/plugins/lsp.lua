@@ -27,11 +27,14 @@ require('mason-lspconfig').setup({
         'clangd',
     },
     handlers = {
+        -- Default handler
         function(server_name)
             require('lspconfig')[server_name].setup({
                 capabilities = lsp_capabilities,
             })
         end,
+
+        -- Lua language server config
         lua_ls = function()
             require('lspconfig').lua_ls.setup({
                 capabilities = lsp_capabilities,
@@ -50,6 +53,23 @@ require('mason-lspconfig').setup({
                         }
                     }
                 }
+            })
+        end,
+
+        -- Clangd config
+        clangd = function()
+            require('lspconfig').clangd.setup({
+                capabilities = lsp_capabilities,
+                cmd = {
+                    "clangd",
+                    "--header-insertion=never",
+                    "--completion-style=detailed",
+                    "--function-arg-placeholders",
+                    "--rename-file-limit=0",
+                    "--background-index",
+                    "--background-index-priority=normal",
+                },
+                filetypes = { "c", "cpp", "objc", "objcpp" },
             })
         end,
     }

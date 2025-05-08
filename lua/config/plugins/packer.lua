@@ -179,13 +179,14 @@ return require('packer').startup(function(use)
             end,
         })
 
-        -- use {
-        --     'rose-pine/neovim',
-        --     as = 'rose-pine',
-        --     -- config = function()
-        --     --     vim.cmd('colorscheme rose-pine')
-        --     -- end
-        -- }
+        use {
+            'rose-pine/neovim',
+            as = 'rose-pine',
+            config = function()
+                vim.cmd('colorscheme rose-pine')
+                vim.api.nvim_set_hl(0, 'CursorLine', { underline = true })
+            end
+        }
 
         -- flash.nvim
         use { 'folke/flash.nvim' }

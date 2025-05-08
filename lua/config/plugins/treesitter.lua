@@ -30,5 +30,7 @@ vim.api.nvim_create_autocmd({ 'BufEnter', 'BufAdd', 'BufNew', 'BufNewFile', 'Buf
         -- Enable Treesitter folding but avoid auto-folding
         vim.opt.foldmethod = 'expr'
         vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+        vim.opt.foldlevel = 20
+        vim.opt.wrap = true;
     end
 })

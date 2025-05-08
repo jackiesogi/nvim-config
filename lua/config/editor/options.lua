@@ -54,5 +54,6 @@ vim.opt.listchars = {
     nbsp = '␣',
 }
 
-vim.opt.foldenable = false
-vim.opt.wrap = true;
+vim.opt.foldenable = true
+-- vim.opt.foldlevel = 20
+-- vim.opt.wrap = true;
