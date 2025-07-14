@@ -14,7 +14,6 @@ return require('packer').startup(function(use)
 
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.8',
-        -- or                            , branch = '0.1.x',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
@@ -26,13 +25,13 @@ return require('packer').startup(function(use)
         end,
     }
 
-    use('theprimeagen/harpoon')
-    use('mbbill/undotree')
-    use('tpope/vim-fugitive')
+    use{'theprimeagen/harpoon', commit = '1bc17e3'}
+    use{'mbbill/undotree', commit = 'b951b87'}
+    use{'tpope/vim-fugitive', commit = '4a745ea'}
 
     use({
         "kylechui/nvim-surround",
-        tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+        tag = "*",
         config = function()
             require("nvim-surround").setup({
                 -- Configuration here, or leave empty to use defaults
@@ -40,55 +39,56 @@ return require('packer').startup(function(use)
         end
     })
 
-    use('vim-airline/vim-airline')
-    use('vim-airline/vim-airline-themes')
+    use{'vim-airline/vim-airline', commit = '45003f9'}
+    use{'vim-airline/vim-airline-themes', commit = 'cda3b5e'}
 
     -- LSP Requirements
     use {
         'VonHeikemen/lsp-zero.nvim',
+        commit = '2afa32e',
         requires = {
             -- LSP Support
-            'neovim/nvim-lspconfig',
-            'williamboman/mason.nvim',
-            'williamboman/mason-lspconfig.nvim',
+            {'neovim/nvim-lspconfig', commit = 'e39da6a'},
+            {'williamboman/mason.nvim', commit = 'fc98833'},
+            {'williamboman/mason-lspconfig.nvim', commit = '1a31f82'},
 
             -- Autocompletion
-            'hrsh7th/nvim-cmp',
-            'hrsh7th/cmp-nvim-lsp',
-            'hrsh7th/cmp-buffer',
-            'hrsh7th/cmp-path',
-            'saadparwaiz1/cmp_luasnip',
-            'L3MON4D3/LuaSnip',
-            'rafamadriz/friendly-snippets'
+            {'hrsh7th/nvim-cmp', commit = 'b53311ab'},
+            {'hrsh7th/cmp-nvim-lsp', commit = 'a8912b8'},
+            {'hrsh7th/cmp-buffer', commit = 'b74fab3'},
+            {'hrsh7th/cmp-path', commit = 'c6635aa'},
+            {'saadparwaiz1/cmp_luasnip'},
+            {'L3MON4D3/LuaSnip', commit = 'c9b9a22'},
+            {'rafamadriz/friendly-snippets', commit = '31f2a26'}
         }
     }
 
     -- Git Integration
-    use 'NeogitOrg/neogit'
+    use{'NeogitOrg/neogit', commit = '97f83f1'}
 
     -- Better Command Prompt
-    use('folke/noice.nvim')
+    use{'folke/noice.nvim', commit = '0427460'}
 
-    use('MunifTanjim/nui.nvim')
-    use('rcarriga/nvim-notify')
+    use{'MunifTanjim/nui.nvim', commit = '8d3bce9'}
+    use{'rcarriga/nvim-notify', commit = 'b5825cf'}
 
     -- Code Outline
-    use 'simrat39/symbols-outline.nvim'
+    use{'simrat39/symbols-outline.nvim', commit = '564ee65'}
 
     -- Debug
     use {
         'nvim-neotest/nvim-nio', -- Add this line
+        commit = '21f5324',
         config = function()
-            -- Any configuration you want to add for nvim-nio
         end
     }
     use {
         'mfussenegger/nvim-dap',
         tag = '0.9.0',
         requires = {
-            'rcarriga/nvim-dap-ui',
-            'jay-babu/mason-nvim-dap.nvim',
-            'nvim-neotest/nvim-nio',
+            {'rcarriga/nvim-dap-ui', commit = '881a69e'},
+            {'jay-babu/mason-nvim-dap.nvim', commit = '4c2cdc6'},
+            {'nvim-neotest/nvim-nio', commit = '21f5324'},
         },
         config = function()
             require("config.plugins.dap")
@@ -98,6 +98,7 @@ return require('packer').startup(function(use)
     -- Comment
     use {
         'numToStr/Comment.nvim',
+        commit = 'e30b7f2',
         config = function()
             require('Comment').setup()
         end
@@ -116,24 +117,24 @@ return require('packer').startup(function(use)
         use 'wbthomason/packer.nvim'
 
         -- Basic features
-        use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-        use 'nvim-lua/plenary.nvim'
-        use 'theprimeagen/harpoon'
-        use 'mbbill/undotree'
-        use 'tpope/vim-fugitive'
+        use { 'nvim-treesitter/nvim-treesitter', commit = '7bbed4b', run = ':TSUpdate' }
+        use {'nvim-lua/plenary.nvim', commit = '857c5ac'}
+        use {'theprimeagen/harpoon'}
+        use {'mbbill/undotree'}
+        use {'tpope/vim-fugitive'}
 
         -- UI & UX optimization
-        use 'vim-airline/vim-airline'
-        use 'vim-airline/vim-airline-themes'
-        use 'rcarriga/nvim-notify'
-        use 'MunifTanjim/nui.nvim'
-        use 'folke/noice.nvim'
+        use {'vim-airline/vim-airline'}
+        use {'vim-airline/vim-airline-themes'}
+        use {'rcarriga/nvim-notify'}
+        use {'MunifTanjim/nui.nvim'}
+        use {'folke/noice.nvim'}
 
         -- LSP and Autocompletion
         use { 'VonHeikemen/lsp-zero.nvim', requires = {
             'neovim/nvim-lspconfig',
             'williamboman/mason.nvim',
-            'williamboman/mason-lspconfig.nvim',
+            {'williamboman/mason-lspconfig.nvim', commit = '1a31f82'},
             'hrsh7th/nvim-cmp',
             'hrsh7th/cmp-nvim-lsp',
             'hrsh7th/cmp-buffer',
@@ -168,6 +169,7 @@ return require('packer').startup(function(use)
 
         use({
             'nvimdev/lspsaga.nvim',
+            commit = '778d56f',
             after = 'nvim-lspconfig',
             config = function()
                 require('lspsaga').setup({
